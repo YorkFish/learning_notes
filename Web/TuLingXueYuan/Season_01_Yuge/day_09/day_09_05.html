@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 获取元素</title>
+
+    <!-- <script src="./day_09_05.js"></script> -->
+    <style>
+        #item1{
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        window.onload = function(){
+            // 1. 获取元素对象
+            var oDiv = document.getElementById('item1');
+            console.log("oDiv =", oDiv);
+
+            /* 2. JS 可以通过 style 属性来给元素设置样式
+                样式是加在行间的
+                JS 添加的样式优先级高
+                注意：
+                    在设置样式的时候，如果有些属性是双拼词 font-size，
+                    要把中横岗去掉，第二个单词首字母大写，即“小驼峰”
+            */
+            // oDiv.style.width = "200px"; // 设置元素的宽度
+            oDiv.style.height = "200px"; // 设置元素的高度
+            oDiv.style.backgroundColor = "red";
+            oDiv.style.fontSize = "30px";
+
+            // 通过 JS 获取元素的样式，只能获取行间样式
+            console.log("oDiv.style.height =", oDiv.style.height);
+
+            /* 3. JS 操作元素的文本内容
+                innerHTML 一般用来设置内容，可以解析标签，获取内容时会连同标签一起获取
+                innerText 一般只用来获取内容，解析不了标签，只能获取文本不能获取标签
+                注意：会覆盖原来的内容
+            */
+            oDiv.innerHTML = "<h1>444</h1>";
+            oDiv.innerText = "<h1>444</h1>";
+            console.log("oDiv.innerHTML =", oDiv.innerHTML);
+            console.log("oDiv.innerText =", oDiv.innerText);
+
+            // 4. 表单值的操作
+            // 4.1 通过 id 获取变淡元素对象
+            Vl = document.getElementById("uname");
+            console.log("Vl =", Vl);
+            
+            /* 4.2 获取表单的值
+                格式：元素对象.value
+            */
+            console.log("Vl.value =", Vl.value);
+            
+            /* 4.3 设置表单的值
+                格式：元素对象.value = "要设置的值"
+            */
+            Vl.value = '777';
+            console.log("Vl.value =", Vl.value);
+        };
+    </script>
+
+    <div id="item1" style="">123</div>
+    <input type="text" value="123" name="username" id="uname">
+</body>
+</html>
+

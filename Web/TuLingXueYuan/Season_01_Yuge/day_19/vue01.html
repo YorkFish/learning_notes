@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>v-model</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <!-- 1. 对普通文本框的值的设置 -->
+            <input type="text" name="username" v-model="msg"> {{msg}} <br>
+
+            <!-- 2. 单选框与多选框 -->
+            <input type="radio" name="gender" v-model="gender" value="1">
+            <input type="radio" name="gender" v-model="gender" value="0">
+            {{gender}} <br>
+
+            <!-- 3. -->
+            <input type="checkbox" name="live" value="1" v-model="live">
+            <input type="checkbox" name="live" value="2" v-model="live">
+            {{live}} <br>
+
+            <!-- 4. -->
+            <input type="checkbox" name="change" value="1" v-model="change">
+            <input type="checkbox" name="change" value="2" v-model="change">
+            <input type="checkbox" name="change" value="3" v-model="change">
+            {{change}} <br>
+
+            <!-- 5. -->
+            <select v-model="select">
+                <option value="1">北京</option>
+                <option value="2">上海</option>
+                <option value="3">广州</option>
+            </select> {{select}}
+        </form>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "123",
+                gender: "1",
+                live: "",
+                change: ["2", "3"],
+                select: "",
+            },
+        });
+    </script>
+</body>
+</html>

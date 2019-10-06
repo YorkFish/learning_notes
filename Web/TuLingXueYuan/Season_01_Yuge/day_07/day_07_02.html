@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>媒体查询</title>
+
+    <style>
+        div{
+            width: 100%;
+            height: 100px;
+            background: #090;
+        }
+        
+        /* 当浏览器窗口 <= 960 时 */
+        @media(max-width: 960px){
+            div{
+                background: red;
+            }
+        }
+        
+        /* 当浏览器窗口 <= 640 时 */
+        @media(max-width: 640px){
+            div{
+                background: blue;
+            }
+        }
+        /* 当浏览器窗口 >= 960 时 */
+        @media(min-width: 960px){
+            div{
+                background: #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>这是内容</div> <!-- 缩放浏览器屏幕大小，div 的底色会被改变 -->
+</body>
+</html>
+

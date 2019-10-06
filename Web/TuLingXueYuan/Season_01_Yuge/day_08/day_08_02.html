@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型转换</title>
+</head>
+
+<body>
+    <script>
+        /* 1. 数值类型转换
+            Number()
+            parseInt()
+            parseFloat（）
+            注意：
+                当字符串中包含任意一个非数值表示的字符时
+                    Number() 返回 NaN
+                    parseInt(), parseFloat() 从头往后读，如果碰到非数值表示的字符，后面的内容就舍去
+                当字符串一开始就是非数值表示的字符，都返回 NaN
+        */
+        // var str = "123";
+        // var str = "1a23abc";
+        var str = "a12e3";
+        // var str = "1.a234abc";
+        console.log("str =", str, "\t typeof(str) =", typeof(str));
+        
+        var res = Number(str);
+        var res1 = parseInt(str);
+        var res2 = parseFloat(str);
+        console.log("res =", res, "\t typeof(res) =", typeof(res));
+        console.log("res1 =", res1, "\t typeof(res1) =", typeof(res1));
+        console.log("res2 =", res2, "\t typeof(res2) =", typeof(res2));
+
+        /* 2. isNaN()
+            检测一个数据是否是 NaN
+            如果是数，返回 false
+            如果不是数，返回 true
+        */
+        var num = "1a";
+        console.log("num =", num, "\t isNaN(num) =", isNaN(num));
+    </script>
+</body>
+</html>
+

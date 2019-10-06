@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 基本数据类型</title>
+</head>
+
+<body>
+    <script>
+        /* 1. 布尔类型
+            只有两个值，true 和 false
+        */
+        var B = true; // Python 中，布尔值首字母大写，如 True； JS 中全是小写
+        
+        /* 2.
+        console.log() 将括号中的结果打印到控制台
+        typeof()      返回括号中数据的数据类型
+        */
+        console.log("typeof(B) =", typeof(B));
+        
+        /* 3. 数值类型
+            (1) 整数
+            (2) 浮点数
+            (3) 二进制数
+            (4) 八进制数
+            (5) 十六进制数
+            (6) NaN
+        */
+        // 3.1 整数
+        var num_1 = 12;
+        console.log("num_1 =", num_1, "\t\t typeof(num_1) =", typeof(num_1));
+        
+        // 3.2 浮点数
+        var num_2 = 12.1;
+        console.log("num_2 =", num_2, "\t typeof(num_2) =", typeof(num_2));
+        
+        /* 3.3 二进制数
+            以 ob 开头
+        */
+        var num_3 = 0b10;
+        console.log("num_3 =", num_3, "\t\t typeof(num_3) =", typeof(num_3));
+
+        /* 3.4 十六进制
+            以 0x 开头，后面跟 0-9, a-f
+        */
+        var num_4 = 0xa;
+        console.log("num_4 =", num_4, "\t\t typeof(num_4) =", typeof(num_4));
+
+        /* 3.5 八进制数
+            以 0 开头
+        */
+        var num_5 = 013;
+        console.log("num_5 =", num_5, "\t\t typeof(num_5) =", typeof(num_5));
+        
+        /* 3.6 NaN
+            not a number，不是数
+        */
+        var num_6 = NaN;
+        console.log("num_6 =", num_6, "\t typeof(num_6) =", typeof(num_6));
+
+        /* 4. 字符串类型
+            只要是用单引号或者双引号引起来的字符，都是字符串类型
+            注意：
+                单双引号可以相互嵌套使用 —— 与 Python 相同
+                三引号没有用 —— 与 Python 不同
+        */
+        var str_1 = '123';
+        var str_2 = "true";
+        var str_3 = 'I love "LL"';
+        console.log("str_1 =", str_1, "\t typeof(str_1) =", typeof(str_1));
+        
+        /* 5. 对象类型
+            (1) 对象
+            (2) 数组
+            (3) null
+        */
+        var obj_1 = {name:'zs', age:18};
+        var list_1 = [1, 2, 3, 4]; // 数组
+        var obj_2 = null;
+        console.log("obj_1 =", obj_1, "\t typeof(obj_1) =", typeof(obj_1));
+        
+        // 6. 函数数据类型 function
+        var Func = function(){
+            console.log("这是一个函数");
+        }
+        console.log("Func =", Func, "\t typeof(Func) =", typeof(Func));
+        
+        /* 7. 未定义 undefined
+            当我们定义一个变量但不给值的时候，它的类型就是 undefined
+        */
+        var un;
+        console.log("un =", un, "\t typeof(un) =", typeof(un));
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的参数问题</title>
+</head>
+
+<body>
+    <script>
+        /* 调用函数时
+            1. 不传实参也能执行，形参返回 undifiend
+            2. 多传参数，多余的参数会被省略
+            3. 函数内部可以通过 arguments 这个属性获取所有传进来的参数，类型是数组类型
+        */
+        function demo(){
+            console.log("函数被调用了");
+            console.log("arguments: ", arguments);
+            for(i in arguments){
+                console.log("arguments[%s] = %d", i, arguments[i])
+            }
+        };
+        // demo();
+        demo(1);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>v-if</title>
+    <script src="../vue.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: green;
+        }
+        .box3{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 1. v-if
+            1.1 v-if="true"
+            1.2 v-if="1>0"
+            1.3 v-if, v-else-if, v-else 在使用时，中间不能穿插别的元素
+        -->
+        <div class="box1" v-if="1<0">1</div>
+        <div class="box2" v-else-if="1==0">2</div>
+        <div class="box3" v-else>3</div>
+        <!-- 1.4 这样写得不到想要的结果
+        <div class="box1" v-if="1<0">1</div>
+        <div class="box2">666</div>
+        <div class="box2" v-else-if="1==0">2</div>
+        <div class="box3">888</div>
+        <div class="box3" v-else>3</div> -->
+
+        <!-- 2. v-show
+            2.1 频繁地显示与隐藏，推荐使用 v-show
+            2.2 判断一次即确定显示或隐藏，推荐使用 v-if
+        -->
+        <div class="box2" v-show="true">4</div>
+        <div class="box2" v-show="false">5</div>
+        <!--
+            {% if true %}
+                <div class="box1"></div>
+            {% else %}
+                <div class="box2"></div>
+        -->
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+            },
+        });
+    </script>
+</body>
+</html>

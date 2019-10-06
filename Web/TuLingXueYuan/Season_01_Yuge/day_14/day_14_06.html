@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event 事件对象</title>
+
+    <script src="../jquery-1.8.3.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        /* 1. event 事件对象
+            通过此对象，可以获取鼠标当前单击时的位置
+            clientX, clientY 相对于窗口的偏移位置
+            offsetX, offsetY 相对于元素的偏移位置
+            pageX,   pageY   相对于文档的偏移位置
+            screenX, screenY 相对于屏幕的偏移位置
+            type 事件类型
+        */
+        $('div').click(function(e){
+            console.log('单击事件被触发啦');
+            // console.log("e =", e);                          // e for enent 类似于在 Python 中写 Class 时要加 self
+            console.log("(%d, %d)", e.clientX, e.clientY);  // 获取单击时相对于窗口的位置
+        });
+
+
+        // 2. 通过事件对象来时时获取当前鼠标的位置
+        $(window).mousemove(function(e){
+            console.log(">>> (%d, %d)", e.clientX, e.clientY);
+        });
+    </script>
+</body>
+</html>
+

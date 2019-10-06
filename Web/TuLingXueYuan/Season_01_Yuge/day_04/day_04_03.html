@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框属性</title>
+
+    <style>
+        .item{
+            width:200px;
+            height:200px;
+
+            /* 1. border 设置边框
+                注意：设置边框的时候有三个值，一个都不能丢
+            */
+            /*border: 3px solid #f00;*/
+            /*border: #0f0 3px dotted;*/
+            /*border: dashed #00f 3px;*/
+
+            /* 2. 单独设置上边框 */
+            border-top: 3px solid red;
+
+            /* 3. 单独设置下边框 */
+            border-bottom: 3px dashed green;
+
+            /* 4. 单独设置左侧的边框 */
+            border-left: 3px dotted blue;
+
+            /* 5. 单独设置右侧的边框 */
+            border-right: 3px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item"></div>
+</body>
+</html>
+

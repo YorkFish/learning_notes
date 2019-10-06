@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 的基本使用</title>
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 嵌入式 -->
+    <script>
+        // 单行注释
+
+        /*
+            多行注释
+        */
+
+        // 弹框 以下两种都行
+        // alert('js试用成功');
+        // window.alert("JS 试用成功");
+    </script>
+
+    <!-- 2. 外链式
+        通过 script 标签的 src 属性来引入外部 js 文件
+        注意：如果使用 script 标签外部引入 js 文件，那么此标签中就不能再写 js 程序，因为它会不执行 -->
+    <script src="./day_07_03.js">
+        alert("这句不会执行");
+    </script>
+
+    <!-- 3. 行间样式 -->
+    <!--
+        on    当..
+        click 单击 -->
+    <div onclick="alert('onclick 行间样式生效了')"></div>
+    <a href="javascript:alert('看左下角')">来点我呀！</a> &nbsp;
+    <a href="javascript:void(0)" onclick="alert('再看左下角')">再来点我呀！</a>
+</body>
+</html>
+

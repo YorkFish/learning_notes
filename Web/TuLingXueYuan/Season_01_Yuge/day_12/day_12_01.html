@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 选择器的使用</title>
+    
+    <style>
+        #item1{
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+    
+    <!-- 引入 jQuery 库文件 -->
+    <script src="../jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <div id="item1" class="item">jQuery 选择器的使用</div>
+    
+    <ul>
+        <li class="box1">1</li>
+        <li class="box2">2</li>
+        <li class="box3">3</li>
+    </ul>
+
+    <script>
+        // 1. 检测 jQuery 库文件是否引入成功
+        console.log($);
+
+        // 2. 获取元素对象
+        // 2.1 通过标签来获取元素对象
+        console.log("$('div') =", $('div'));
+
+        // 2.2 通过类来获取元素对象
+        console.log("$('.item') =", $('.item'));
+
+        /* 2.3 通过 id 来获取元素对象
+            document.getElementById('item1');
+        */
+        console.log("$('#item1') =", $('#item1'));
+        
+        // 3. 查找元素
+        // 3.1 查找页面的那个中的第一个 li 元素
+        console.log("$('li:first') =", $('li:first'));
+
+        // 3.2 获取页面当中最后一个li元素
+        console.log("$('li:last') =", $('li:last'));
+        
+        /* 3.3 获取页面当中指定 li 元素
+            eq(索引值)，索引值从 0 开始
+        */
+        console.log("$('li:eq(0)') =", $('li:eq(0)'));
+        console.log("$('li').eq(0) =", $('li').eq(0)); // 许多时候，这个方法更有用
+
+        // 3.4 通过元素内的字符来查找元素
+        console.log("$('li:contains(2)') =", $('li:contains(2)'));
+        
+        // 3.5 通过指定元素的指定属性来查找元素
+        console.log("$('li[class=box3]') =", $('li[class=box3]'));
+    </script>
+</body>
+</html>
+

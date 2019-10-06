@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机数</title>
+</head>
+
+<body>
+    <script>
+        /* 1. 取 [0, 1) 之间的随机数
+            P(Math.random()=0) = 0
+            事件可能发生，但概率为零
+        */
+        var res = Math.random();
+        console.log("[0, 1]: ", res);
+
+        // 2. 取 0-10 之间的随机数
+        var res1 = Math.random() * 10;
+        console.log("[0, 10]: ", res1);
+        
+        // 3. 取 0-10 之间的随机整数
+        var res2 = Math.floor(Math.random() * 11);
+        console.log("[0, 10]: ", res2);
+
+        /* 4. 取指定数之间的随机整数
+            如 10-15
+                范围是 5，因为右边界的关系，5 要加 1，取 6
+                基数是 10
+        */
+        var res3 = Math.floor(Math.random() * 6) + 10;
+        console.log("[10, 15]: ", res3);
+
+        // 5. 打包成函数
+        function rund(m, n){
+            return Math.floor(Math.random() * (n-m+1)) + m;
+        }
+        var res4 = rund(10, 20);
+        console.log("[10, 20]: ", res4);
+    </script>
+</body>
+</html>
+

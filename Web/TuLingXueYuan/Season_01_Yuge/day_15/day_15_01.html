@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点的操作</title>
+
+    <script src="../jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // 0. 照惯例，检查一下 jQuery 文件导入成功与否
+        // console.log($);
+
+        // 1. 创建节点
+        var oDiv = $('<div>这是新创建的元素节点</div>');
+
+        // 2. 添加节点 append()
+        $('body').append(oDiv); // F12 -> Elements, body 体的 script 标签下方新增了一个 div 标签
+    </script>
+</body>
+</html>
+

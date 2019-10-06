@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态绑定事件</title>
+
+    <script src="../jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <button class="btn1">按钮1</button>
+    <script>
+        // 1. 绑定事件
+        // $('.btn1').click(function(){
+        //    console.log("click 事件绑定成功");
+        // });
+
+
+        // 2. live 方法在 jQuery-1.8.3 以上的高版本被移除了，使用时需注意版本
+        $('.btn1').live('click', function(){
+           console.log("动态添加的元素也被绑定了事件");
+        });
+
+
+        // 3. 在页面当中用 jQuery 动态添加一个新的元素
+        var newBtn = $('<button class="btn1">按钮2</button>');    // 创建新的元素
+        $('body').append(newBtn);                                 // 将元素添加到页面当中
+        $('.btn1').trigger('click');                              // 触发事件，自动触发指定的事件（不指定会报错）
+    </script>
+</body>
+</html>
+

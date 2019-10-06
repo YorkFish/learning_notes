@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>计算属性</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 当 a 发生变化时，输出 a+1 -->
+        <input type="text" v-model="a"> <br>
+        {{b}} <br>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                a: 1,
+            },
+            computed: {
+                // 简单地说，设置时调用 set，输出时调用 get
+                b: {
+                    // 默认就是 get 属性
+                    get: function(){
+                        return parseInt(this.a) + 1;
+                    },
+                    // 在控制台输入 vm.b = 10 运行照旧
+                    set: function(value){
+                        return this.a = value;
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+</html>

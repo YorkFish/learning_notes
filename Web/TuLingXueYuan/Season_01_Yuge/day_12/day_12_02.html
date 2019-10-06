@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子级关系选择器</title>
+
+    <script src="../jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="in">
+            <div class="item1">item1</div>
+            <div class="item2">item2</div>
+            <div class="item3">item3</div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 检测 jQuery 文件是否导入成功
+        // alert($);
+
+        
+        /* 2. 通过父元素获取子元素
+            格式：$('父元素').children()
+        */
+        // 2.1 获取指定元素里的所有子元素，返回的是数组
+        console.log("$('.wrap').children() =", $('.wrap').children());
+
+        // 2.2 获取指定的第一个子元素
+        console.log("$('.wrap div:first-child') =", $('.wrap div:first-child'));
+
+        // 2.3 获取指定的最后一个元素
+        console.log("$('.wrap div:last-child') =", $('.wrap div:last-child'));
+
+        /* 2.4 通过元素的个数获取指定父级元素下的指定子元素
+            格式：$('父级元素 子元素:ntc-child(个数)');
+            个数从 1 开始
+        */
+        console.log("$('.wrap div:nth-child(2)') =", $('.wrap div:nth-child(2)'));
+
+        
+        // 3. 获取同级元素
+        // 3.1 通过同级元素来获取同级的上一个元素
+        console.log("$('.item2').prev() =", $('.item2').prev());
+
+        // 3.2 通过同级元素来获取同级的下一个同级元素
+        console.log("$('.item2').next() =", $('.item2').next());
+
+        // 3.3 获取所有的同级元素，但不包含自己
+        console.log("$('.item2').siblings() =", $('.item2').siblings());
+
+        
+        // 4. 通过子元素来获取父元素
+        // 4.1 通过指定的子元素来获取父元素
+        console.log("$('.item1').parent() =", $('.item1').parent());
+
+        /* 4.2 通过指定元素获取先辈级元素
+            如果不指定找那个先辈，就返回所有的先辈元素
+        */
+        console.log("$('.item1').parents('.wrap') =", $('.item1').parents('.wrap'));
+
+        /* 4.3 查找当前元素下的指定子元素
+            如果不指定子元素，就获取不到元素
+            必须指定子元素
+        */
+        console.log("$('.wrap').find('.item1') =", $('.wrap').find('.item1'));
+    </script>
+</body>
+</html>
+

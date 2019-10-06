@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阴影效果</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+
+            /* box-shadow 设置阴影
+                第一个值：设置水平方向位移，正值往右偏移，负值往左偏移
+                第二个值：设置垂直方向位移，正值向下，负值向上
+                第三个值：设置模糊程度
+                第四个值：设置扩散范围
+                第五个值：设置阴影颜色
+                第六个值：设置是否为内阴影，insert 为内阴影，不写就是不设置内阴影
+            */
+            /*box-shadow: -10px -10px 20px 10px red inset;*/
+
+        }
+        .box:hover{
+            box-shadow: -10px -10px 20px 20px #ccc;
+        }
+        p{
+            /* text-shadow 设置文字阴影
+                第一个值：设置水平方向位移，正值往右偏移，负值往左偏移
+                第二个值：设置垂直方向位移，正值向下，负值向上
+                第三个值：设置模糊程度
+                第四个值：设置阴影颜色
+
+                阴影不会被选中，有些电子书 hidden 文字、保留阴影，以防止复制
+            */
+            text-shadow: 0px 20px 0px red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <p>YorkFish</p>
+</body>
+</html>
+

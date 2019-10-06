@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>事件绑定</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="al">单击</button> <br>
+        <button v-on:dblclick="al">双击</button> <br>
+        <button v-on:mouseover="al">鼠标移入</button> <br>
+        <button v-on:mouseout="al">鼠标移出</button> <br>
+        <input @keydown="down1"> <br>
+        <input @keydown.50="down2">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "ok",
+            },
+
+            // 主要用来写函数
+            methods: {
+                al: function(){
+                    alert(this.msg);
+                },
+                down1: function(e){
+                    // alert("你按下了键盘");
+                    // console.log(e);
+                    console.log(e.keyCode);
+                },
+                down2: function(e){
+                    console.log("你按下了 2");
+                },
+            },
+        });
+    </script>
+</body>
+</html>

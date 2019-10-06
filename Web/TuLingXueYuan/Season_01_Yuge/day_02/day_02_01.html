@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML 常用的行级元素</title>
+    </head>
+    <body>
+        <!-- 1. 链接标签
+            a 标签的属性（我之前在 Markdown 有提到）
+                href:   后面跟要跳转的网址
+                target: 后面跟 _blank，表示在新标签页中打链接 -->
+        <!-- 1.1 打开网络链接 -->
+        <a href="http://www.cnblogs.com">博客园</a><br>
+        <!-- 1.2 打开本地链接 -->
+        <a href="./本地链接.html" target="_blank">跳转到本地的文件(本地链接.html)</a><br>
+        <!-- 关于路径
+            绝对路径：windows 中绝对路径的根是我们文件所在的盘符，如
+                C:\Users\york\Desktop\前端学习.html
+            注意：实际开发当中建议使用相对路径
+                ./  当前目录
+                ../ 上一层目录 -->
+
+        <!-- 2. a 标签的锚点的使用
+            图像标签 img 的属性：
+                src:   图片的地址（网络地址、本地地址均可，Markdown 与其类似）
+                alt:   图片加载失败时的替代文字（必须写）
+                title: 鼠标移至图上时的提示信息（可写可不写）
+                width / height: 设置图片的（宽 / 高）度，一般二选一
+            注意：
+                一般地，图片的宽度与高度关联了纵横比
+                此标签不需要闭合（强行闭合倒也没事） -->
+        <img src="https://xxxxxx/xxx.jpg" height="200px" alt="不好意思，加载失败了~" title="1没有图片，因为没有这个网络地址"><br>
+        <img src="./xxx.jpg" width="200px" alt="不好意思，加载失败了~" title="2没有图片，因为该地址连不到本地"><br>
+        
+        <!-- 3. 文本标签 -->
+        <!-- 常用标签
+            b:      加粗
+            strong: 具有强调意义
+            i:      斜体
+            em:     斜体，具有强调意义 -->
+            <b>b 加粗</b> <br>
+            <strong>strong 着重</strong> <br>
+            <i>i 斜体</i> <br>
+            <em>em 强调</em> <br>
+
+        <!-- 4. 无语义的行级元素 span
+            一般 span 标签也是配合 css 使用，以设置文本中的一部分内容 -->
+        <span style="color:red">span 红色</span> <br>
+
+        <!-- 5. html 中的实体字符
+            &gt;   大于号
+            &lt;   小于号
+            &copy; 圈 C
+            &nbsp; 空格 -->
+        对照组 <br>
+        1 < 2 <br>
+        2 > 1 <br>
+        a + b <br>
+        实验组 <br>
+        1 &lt; 2; <br>
+        2 &gt; 1; <br>
+        a&nbsp;+&nbsp;b <br>
+        一个&nbsp;&nbsp;&nbsp;&nbsp;符号：&copy; <br>
+    </body>
+</html>
+

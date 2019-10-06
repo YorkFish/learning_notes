@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量作用域</title>
+</head>
+
+<body>
+    <script>
+        /* 1.
+            全局变量：在函数外部声明的变量是全局变量
+            局部变量：在函数内部声明的变量是局部变量
+
+            注意：
+                若函数内部有与外部同名的局部变量，则内部优先使用局部变量的值
+                若全局变量的作用域发生了改变，变成了局部变量，局部变量的值发生变化不会影响我们的全局变量
+                在函数内部不使用 var 声明的变量是全局变量
+        */
+        var a = 1;
+        function demo(){
+            a = 6;
+            var a = 0;
+            b = 10;
+            console.log("a =", a);
+        }
+        // console.log("a =", a);
+        demo();
+        console.log("a =", a);
+        console.log("b =", b);
+
+        // 2. 为验证结果，写了几个小例子
+        // 2.1
+        var g1 = 1;
+        function demo1(){
+            var l1 = 2;
+            console.log('g1 = %d, l1 = %d', g1, l1);
+        }
+        demo1();
+        console.log('g1 =', g1);
+        // console.log('l1 =', l1); // 会报错
+
+
+        // 2.2
+        var g2 = 5;
+        function demo2(){
+            console.log('g2 =', g2);
+            g2 = 10;
+            console.log('g2 =', g2);
+        }
+        console.log('g2 =', g2);
+        demo2();
+        console.log('g2 =', g2);
+
+        // 2.3
+        var g3 = 5;
+        function demo3(){
+            console.log('g3 =', g3); // 一旦函数内部 var 了变量 n，那么函数中所有的 n 都变成了局部变量
+            g3 = 10;
+            console.log('g3 =', g3);
+            var g3 = 15;
+            console.log('g3 =', g3);
+        }
+        console.log('g3 =', g3);
+        demo3();
+        console.log('g3 =', g3);
+
+        // 2.4
+        function demo2(){
+            l3 = 10; // 这里没使用 var，意为将 l3 视为全局变量（限非严格模式）
+            console.log('l3 =', l3);
+        }
+        demo2();
+        console.log('l3 =', l3); // 非严格模式下，函数内不用 var 声明的变量可以在函数外部使用
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>计算属性</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 当 a 发生变化时，输出 a+1 -->
+		<input type="text" v-model="a"> <br>
+		{{a+1}} <br>
+		{{parseInt(a)+1}} <br>
+		{{b}} <br>
+		{{c()}} <br>
+	</div>
+	<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				a: 1,
+			},
+			computed: {
+				// b 里写的是业务逻辑；有缓存
+				b: function(){
+					return parseInt(this.a) + 1;
+				},
+			},
+			methods: {
+				c: function(){
+					return parseInt(this.a) + 1;
+				},
+			},
+		});
+	</script>
+</body>
+</html>

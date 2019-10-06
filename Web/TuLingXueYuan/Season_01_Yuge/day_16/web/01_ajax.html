@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="./jquery-1.8.3.min.js"></script> <!-- jQuery 放在上级文件夹会出错 -->
+</head>
+
+<body>
+    <button>$.get</button>
+    <button>$.post</button>
+    <button>$.ajax</button>
+    <script>
+        /* ajax 全局配置
+            设置当前脚本中又有的 ajax 为同步
+            不推荐使用：
+                ajax 默认为异步，所以不必额外写
+                ajax 多用于异步
+        */
+        // $.ajaxSetup({async:false});
+
+        /* 1. $.get() 发送 get 请求
+            当触发单击事件时，向后台请求/发送数据
+
+            第一个参数：请求地址
+            第二个参数：要发送的数据（可写可不写）
+            第三各参数：请求成功后执行的函数
+                data: 形参，用来接收后端给我们返回的数据
+            第四个参数：指定返回数据的类型
+
+            注意：
+                如果后台返回的数据不是指定的数据类型那么就不接收
+        */
+        $("button").eq(0).click(function(){			
+            $.get("./cgi-bin/1.py", {username:"zhangsan", age:18}, function(data){
+                console.log(data);
+            }, "json");
+        });
+
+
+        /* 2. $.post() 发送 post 请求
+            若指定 json 数据格式，获取到的是一个对象
+            若不指定 json 数据格式，获取到的是一个字符串
+            为方便操作，一般都会指定 json 数据格式
+        */
+        $("button").eq(1).click(function(){
+            $.post("./cgi-bin/1.py", {username:"lisi", age:28}, function(data){
+                console.log(data);
+            }, "json");
+        });
+
+
+        /* 3. $.ajax()
+            ajax 默认是异步
+            直接传对象进去
+        */
+        $("button").eq(2).click(function(){
+            console.log($(this));                   // 与下方 ajax 内部的返回值不同
+            var i = 1;
+
+            $.ajax({
+                url:"./cgi-bin/1.py",               // 请求的地址
+                type:"get",                         // 指定请求方式 "get" or "post"，不区分大小写
+                data:{username:"wangwu",age:60},    // 请求时携带的参数
+                dataType:"json",                    // 指定返回的数据类型
+                success:function(da){               // 请求成功后调用的函数
+                    console.log(da);
+                    i++;
+                    console.log($(this));           // 与上方 ajax 外部的返回值不同
+                },
+                error:function(){
+                    console.log("请求失败");        // 请求失败时指定的函数
+                },
+                timeout:2000,                       // 设置请求响应的超时时间
+                // async:true,                         // true 代表异步，false 代表同步，默认为异步
+            });
+            console.log(i);                         // 异步的情况下，输出 1；同步的情况下，输出 2
+        });
+    </script>
+</body>
+</html>

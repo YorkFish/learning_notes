@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用 jQuery 操作元素的样式</title>
+    
+    <script src="../jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <div class="item1" id="item1"></div>
+    
+    <script>
+        // 1. 检测库文件是否导入成功
+        // alert($);
+
+        // 2. 操作元素样式
+        // 2.1 获取元素对象 CSS 的方法
+        var el = document.getElementById('item1');
+        // el.style.width = '100px';
+        // el.style.height = '100px';
+        // el.style.background = 'red';
+
+        // 2.2 设置元素的样式
+        // $('.item1').css('width', '100px');
+        // $('.item1').css('height', '100px');
+        // $('.item1').css('background', 'blue');
+        
+        /* 2.3 一次性设置多个样式
+            CSS 方法传参类型：对象类型
+        */
+        $('.item1').css({width:'100px', height:'100px', border:'1px solid red'});
+
+        /* 2.4 获取元素的样式
+            获取到的是带单位的字符串
+        */
+        // console.log(el.style.width);
+        console.log($('.item1').css('width'));
+    </script>
+</body>
+</html>
+

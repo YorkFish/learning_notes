@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+
+    <script src="../jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        /* 键盘按下事件 keydown
+            键盘按下时触发
+            一般对 window 绑定键盘按下事件
+        */
+        $(window).keydown(function(e){
+            // alert('1');
+            // 通过 event 事件对象来获取当前按下的键盘
+            console.log(e.keyCode);
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        /* 因为这个冒号，该选择器也被称为“冒号选择器”
+            hover 设置鼠标悬停在元素上时的状态
+            此处是设置鼠标移入 box 区域内的样式
+        */
+        .box:hover{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+
+        /* before 在元素里面的头部插入内容 */
+        .box:before{
+            content: "before-";
+        }
+
+        /* after 在元素里面的尾部插入内容 */
+        .box:after{
+            content: "-after";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">love</div>
+</body>
+</html>
+

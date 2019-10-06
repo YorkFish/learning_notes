@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的绑定</title>
+
+    <script src="../jquery-1.8.3.min.js"></script>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .item1{
+            background: red;
+        }
+        .item2{
+            background: green;
+        }
+        .item3{
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item1"></div>
+    <div class="item2"></div>
+    <div class="item3"></div>
+
+    <script>
+        /* 基本的事件绑定
+            格式：元素对象.onclick = function(){}
+            原生 JS
+        */
+        // 1. 给 item1 绑定单击事件
+        $('.item1').click(function(){
+            alert('click 单击事件被触发了');
+        });
+
+        /* 2. 方法绑定
+            bind
+            on
+        */
+        $('.item2').bind('click', function(){
+            alert('bind 单击事件被触发了');
+        });
+
+        $('.item3').on('click', function(){
+            alert('on 绑定方法');
+        });
+
+    </script>
+</body>
+</html>
+

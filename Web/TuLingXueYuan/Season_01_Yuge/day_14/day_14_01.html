@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+
+    <script src="../jquery-1.8.3.min.js"></script>
+    <style>
+        #item1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 1. #item1 在下方，程序自上而下运行到此处，还获取不到 item1
+        console.log("$('#item1') =", $('#item1'));
+
+
+        // 2. 解决获取不到的方法
+        // 2.1 当页面加载完成之后触发 ready
+        $(document).ready(function(){
+            console.log("$('#item1') =", $('#item1')); // 这是加载完成之后执行的代码，所以可以获取到 #item1
+        });
+
+        // 2.2 当文档加载完成之后自动调用自己（与 2.1 同效，是其缩写）
+        $(function(){
+            console.log("$('#item1') =", $('#item1'));
+        });
+    </script>
+
+    <div id="item1"></div>
+    <script>
+        // 3. click 基本事件绑定
+        $('#item1').click(function(){
+            console.log("click 单击事件");
+        });
+
+
+        // 4. dblclick 双击事件
+        $('#item1').dblclick(function(){
+            console.log("dblclick 双击事件");
+        });
+
+
+        // 5. bind 方法绑定
+        $('#item1').bind("click", function(){
+            console.log("bind 绑定事件方法");
+        });
+
+
+        /* 6. 解除事件绑定
+            注意：
+                如果不指定解除的事件，那么就会解除元素上的所有事件
+                如要解除指定的事件，那就给它传指定事件的参数
+        */
+        // $('#item1').unbind(); // 解除 #item1 上的所有事件
+        $('#item1').unbind("click"); // 解除单击事件
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>v-for</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!-- <li>苹果</li>
+            <li>香蕉</li>
+            <li>橘子</li>
+            <li>葡萄</li>
+            <li>西瓜</li> -->
+
+            <!-- 1. v-for=""
+                此处一定要使用 ""
+            -->
+            <li v-for="i in arr">{{i}}</li>
+        </ul>
+        <ul>
+            <!-- 2.
+            2.1 v,i 加不加括号均可
+            2.2 v,i 可以用别的变量替换
+            2.3 可以做简单的运算
+            2.4 :key="idx" 加与不加，影响不大，但是推荐加上
+
+            <li v-for="(v,i) in arr">{{v}}->{{i}}</li>
+            -->
+            <li v-for="v,idx in arr" :key="idx">{{v}} -> {{idx+1}}</li>
+        </ul>
+        <ul>
+            <!-- 3.
+            <li v-for="i in obj">{{i}}</li>
+            -->
+
+            <!-- 4. 此处与 Python 的字典有所不同
+                4.1 key 与 value 顺序相反
+                4.2 有索引值，排在第三位
+            -->
+            <li v-for="v,k,idx in obj">{{k}} -> {{v}} -> {{idx}}</li>
+        </ul>
+    </div>
+    <!-- Python Django 的魔法语法
+        {% for i in arr %}
+            <li>{{i}}</li>
+        {% endfor %}
+    -->
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                arr: ["铅笔", "橡皮", "尺子", "圆规"],
+                obj: {
+                    name: "张三",
+                    gender: "1", // 一般 男：1，女：0
+                    length: "180cm",
+                },
+            },
+        });
+    </script>
+</body>
+</html>

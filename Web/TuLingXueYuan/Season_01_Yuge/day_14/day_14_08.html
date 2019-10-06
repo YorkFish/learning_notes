@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件实例</title>
+
+    <script src="../jquery-1.8.3.min.js"></script>
+    <style>
+        *{margin:0;padding:0}
+        div{
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 当按下 wasd 键时，控制页面的元素对应上下左右进行移动 -->
+    <div></div>
+
+    <script>
+        var L = 0;                  // 定义一个左右移动的位置
+        var T = 0;                  // 定义一个上下移动的位置
+
+        $(window).keydown(function(e){
+            // console.log(e.keyCode); // 试验出 w, a, s, d 对应的数字；得到答案：w:87, a:65, s:83, d:68
+
+            var stp = e.keyCode;    // 获取键值
+
+            // 判断当前按下的是哪个键；switch 也行
+            if(stp == 65){          // a 左移
+                L -= 5;             // 一次移 5
+               // $('div').css({'left': L + 'px'}); // 两种方法均可
+               $('div').css('left', L + 'px');
+               // console.log("L =", L); // 调试时查看用
+            }else if(stp == 83){    // s 下移
+                T += 5;
+                $('div').css('top', T + 'px');
+            }else if(stp == 68){    // d 右移
+                L += 5;
+                $('div').css('left', L + 'px');
+            }else if(stp == 87){    // w 上移
+                T -= 5;
+                $('div').css('top', T + 'px');
+            }
+        });
+    </script>
+</body>
+</html>
+

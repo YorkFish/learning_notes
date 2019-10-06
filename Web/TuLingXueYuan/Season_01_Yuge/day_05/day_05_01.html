@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 的内边距</title>
+    
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            
+            /* 1. 设置元素的内间距
+                让内容和元素的边框有一定距离
+                注意：使用 padding 会改变元素的实际大小
+            */
+            /*padding-top: 30px;*/
+            /*padding-right: 30px;*/
+            /*padding-bottom: 30px;*/
+            /*padding-left: 30px;*/
+
+            /* 2. padding 设置四个值时
+                第一个值：代表元素顶部的内间距
+                第二个值：代表元素右边的内间距
+                第三个值：代表元素底边的内间距
+                第四个值：代表元素左边的内间距
+            */
+            /*padding: 10px 15px 20px 25px;*/
+
+            /* 3. padding 设置两个值时
+                第一个值：代表上下对边的间距
+                第二个值：代表左右对边的间距
+            */
+            /*padding: 10px 30px;*/
+
+            /* 4. padding 设置一个值时
+                代表四个边的间距
+            */
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 内边距
+        不妨设 b 在 a 内
+        元素 b 与元素 a 边界的间距即为内边距 -->
+    <div>你好</div>
+</body>
+</html>
+

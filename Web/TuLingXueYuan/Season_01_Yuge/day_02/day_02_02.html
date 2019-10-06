@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>表单标签</title>
+</head>
+
+<body>
+    <!-- form 标签：划定一个表单区域
+    action:  数据的提交地址
+    method:  提交方式
+    get:    （默认方式）通过 url 地址传输数据，数据会显示在 url 地址栏中，相对来说不安全
+             传输数据有大小限制，不同浏览器传输的数据大小不同
+
+    post:    数据不通过 url 地址传参，相对来说较安全
+             数据传输没有具体的大小限制
+             一般表单指定使用 post 方式提交数据
+
+    enctype: 如果表单当中有文件上传，必须添加这个属性
+             指定属性值为 multipart/form-data 用于文件转码 -->
+    <form action="" method="post" enctype="multipart/form-data">
+        <!-- 1. input
+            1.1 type: 指定表单类型
+                text:     普通文本
+                password: 密码框
+
+            {username:york, gender:1, love:[s, b, p], education:3} -->
+        用户名：<input type="text" name="username" placeholder="请输入用户名"> <br>
+        密 码：<input type="password" name="password"> <br>
+
+        <!-- 1.2 type="radio"
+            必须有 name 属性和 value 属性
+            一组单选框 name 属性的值必须相同 -->
+        <input type="radio" name="gender" value="1" checked> 男
+        <input type="radio" name="gender" value="0"> 女 <br>
+
+        <!-- 1.3 type="checkbox"
+            必须指定 name 属性和 value 属性
+            一组多选框 name 属性的值要相同 -->
+        爱好: <br>
+        <input type="checkbox" name="hobbies[]" value="s" checked> 足球 <br>
+        <input type="checkbox" name="hobbies[]" value="b"> 羽毛球 <br>
+        <input type="checkbox" name="hobbies[]" value="p"> 乒乓球 <br>
+
+        <!-- 2. 下拉选项框必须配合 option 来使用 -->
+
+        学历:
+        <select name="education" >
+            <option value="0">小学</option>
+            <option value="1">初中</option>
+            <option value="2">高中</option>
+            <option value="3">大学</option>
+        </select> <br>
+
+        <!-- 3. type="file" -->
+        请选择要上传的文件：<input type="file" name="file"> <br>
+
+        <!-- 4. 多行文本输入 -->
+        请输入个人说明: <br>
+        <textarea name="text" id="">请输入个人信息</textarea> <!-- 按住左下角可以改变输入框的大小 -->
+        <br>
+
+        <!-- 5.
+            type="submit"
+            type="button"
+            type="reset"
+
+            适用范围：botton > input button > input submit-->
+        <input type="submit" value="确定"> <br>
+        <input type="button" value="按钮"> <br>
+        <input type="reset" disabled> <br>
+        <button>提交</button> <br>
+
+        <!-- 6. hidden: 不需要用户查看和填写的信息 -->
+        <input type="hidden" name="id" value="0">
+
+        <!-- 这里开始，下面均是 HTML5 新加入的参数 -->
+        <!-- 7. type="image" -->
+        <input type="image" src="..\Imgs\green.png" alt="green.png"> <br>
+
+        <!-- 8. type="range" -->
+        <input type="range" min="0px" max="500px" value="100px" step="100px"> <br>
+
+        <!-- 9. type="number" -->
+        <input type="number" min="1" max="5"> <br>
+
+        <!-- 10. type="date" -->
+        <input type="date"> <br>
+
+        <!-- 11. type="email" -->
+        <input type="email"> <br>
+    </form>
+</body>
+</html>
+
